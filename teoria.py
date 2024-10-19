@@ -423,23 +423,6 @@ for i in range(1,len(arr)):
         j -= 1
 print(arr)
 
-def troco(valor): # o valor nesse caso é um parametro, e quando passamos algo quando a função é chamada é o que chamamos de argumento
-    resto = valor
-    resultado = {}
-    for i in [100, 50, 20, 10, 5, 2, 1]:
-        count = 0
-        while resto >= i:
-            count += 1
-            resto -=  i
-        resultado[i] = count
-    return resultado
-
-troco_valores = troco(596) # chamamos a função troco, e passamos 596 como argumento da função
-
-for nota, quantidade in troco_valores.items():
-    print(f'{quantidade} nota(s) de R$ {nota}')
-
-
 def mult(valor1, valor2): # tanto o valor 1 como o valor 2 são parametros
     return valor1 * valor2
 
@@ -501,10 +484,14 @@ inteiro, informe que não é um número inteiro.
 # numero = input("Digite um numero inteiro: ")
 # try:
 #     num_int =  int(numero)
-#     if num_int % 2 == 0:
-#         print(f"o número {num_int} é par")
-#     else:
-#         print(f"o número {num_int} não é par")
+#     par_impar = num_int % 2 == 0
+#     par_impar_text = 'impar'
+# 
+#     if par_impar:
+#         par_impar_text = 'par'    
+#     
+#     print(f'O número {num_int} é {par_impar_text}')
+# 
 # except:
 #     print("Não é um número inteiro")
 
@@ -514,17 +501,19 @@ descrito, exiba a saudação apropriada. Ex.
 Bom dia 0-11, Boa tarde 12-17 e Boa noite 18-23.
 """
 
-horas = input("Que horas são: ")
-
-try:
-    if 0 <= horas <= 11:
-        print("Bom Dia")
-    if 12 <= horas <= 17:
-        print("Bom Tarde")
-    if 18 <= horas <= 23:
-        print("Boa Noite")
-except:
-    print("Digite um número")
+# horas = input("Que horas são: ")
+# try:
+#     horas_int = int(horas)
+#     if 0 <= horas_int <= 11:
+#         print("Bom Dia")
+#     elif 12 <= horas_int <= 17:
+#         print("Bom Tarde")
+#     elif 18 <= horas_int <= 23:
+#         print("Boa Noite")
+#     else:
+#         print("Fora do escopo")
+# except:
+#     print("Digite um número")
 
 """
 Faça um programa que peça o primeiro nome do usuário. Se o nome tiver 4 letras ou 
@@ -532,7 +521,57 @@ menos escreva "Seu nome é curto"; se tiver entre 5 e 6 letras, escreva
 "Seu nome é normal"; maior que 6 escreva "Seu nome é muito grande". 
 """
 
+# nome = input('Digite o seu nome: ')
+# tamanho_nome = len(nome)
+# if tamanho_nome <= 4:
+#     print('Seu nome é curto')
+# elif 5 < tamanho_nome < 6:
+#     print('Seu nome é normal')
+# else:
+#     print('Seu nome é muito grande')
+ 
 
+"""
+    https://docs.python.org/3/library/stdtypes.html
+    Tipos build-in methods
+"""
 
+string = 'Osmar William'
+outra_string = f'{string[:3]}ABC{string[4:]}'
+print(outra_string) 
+print(string.capitalize())
+print(string.zfill(20))
 
+"""
+    Repetições
+    While (enquanto)
+"""
 
+condicao = True
+while condicao:
+    print('Olá')
+    break 
+contador = 0
+while contador <= 100:
+    contador += 1
+    
+    if contador == 6:
+        print('não será mostrado o 6')
+        continue
+    if 10 <= contador <= 27:
+        print('não será mostrado o ', contador)
+        continue
+    
+    print(contador)
+
+    if contador == 40:
+        break
+
+nome = 'osmar william'
+tamanho_nome = len(nome)
+contador = 0
+novo_nome = ""
+while contador < tamanho_nome:
+    novo_nome += f'*{nome[contador]}'
+    contador += 1
+print(novo_nome)
