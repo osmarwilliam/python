@@ -9,7 +9,6 @@
         encerrar a entrada de dados
 '''
 
-
 def tempo(inicio, final):
     inicio_int = int(inicio)
     final_int = int(final)
