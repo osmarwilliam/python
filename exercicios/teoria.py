@@ -575,3 +575,24 @@ while contador < tamanho_nome:
     novo_nome += f'*{nome[contador]}'
     contador += 1
 print(novo_nome)
+
+""" While/else """
+
+string = 'Valor qualquer'
+i = 0
+while i < len(string):
+    letra = string[i]
+    print(letra)
+else:
+    print("O else foi executado")
+
+frase = "O Python é uma linguagem de programação" \
+    'multiparadigma.'\
+    'Python foi criado por Guildo van Rossum.'
+
+i = 0
+apareceu_mais_vezes = ...
+letra_que_apareceu_mais_vezes = ...
+while i < len(frase):
+    letra_atual = frase[i]
+    i += 1
