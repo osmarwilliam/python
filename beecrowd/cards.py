@@ -2,7 +2,7 @@ lista = input().split()
 for i in range(5):
     lista[i] = int(lista[i])
 
-def cards(lista):
+def cards(lista : list) -> str:
     count = 0
     for i in range(4):
         if lista[i+1] > lista[i]:
