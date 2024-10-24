@@ -1,4 +1,4 @@
-def troco(valor): # o valor nesse caso é um parametro, e quando passamos algo quando a função é chamada é o que chamamos de argumento
+def troco(valor : int) -> list: # o valor nesse caso é um parametro, e quando passamos algo quando a função é chamada é o que chamamos de argumento
     resto = valor
     resultado = {}
     for i in [100, 50, 20, 10, 5, 2, 1]:
