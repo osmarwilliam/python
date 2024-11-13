@@ -6,6 +6,7 @@ for i in range(5):
 
 x = int(input("Digite um valor para verificar se ele está presente no vetor: "))
 if x in vetor:
-    print(f'{x} está presente no {vetor}')
+    posicao = vetor.index(x)
+    print(f'{x} está presente no  vetor = {vetor}, e está na {posicao}')
 else:
     print('-1')
