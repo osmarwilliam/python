@@ -430,10 +430,9 @@ mult(10, 20) # 10 e o 20 são argumentos
 
 
 # tipagem dinamica e forte
-#x = "olá"
-#y = 2
-#
-#print(x + y)
+# x = "olá" dinamica
+# y = 2
+# print(x + y)  forte
 
 velocidade = 61
 local_carro = 90
@@ -583,6 +582,7 @@ i = 0
 while i < len(string):
     letra = string[i]
     print(letra)
+    i += 1
 else:
     print("O else foi executado")
 
@@ -591,8 +591,42 @@ frase = "O Python é uma linguagem de programação" \
     'Python foi criado por Guildo van Rossum.'
 
 i = 0
-apareceu_mais_vezes = ...
-letra_que_apareceu_mais_vezes = ...
+apareceu_mais_vezes = 0
+letra_que_apareceu_mais_vezes = ''
 while i < len(frase):
     letra_atual = frase[i]
+    if letra_atual == ' ':
+        i += 1
+        continue
+    qtd_atual = frase.count(letra_atual)
+    if apareceu_mais_vezes < qtd_atual:
+        apareceu_mais_vezes = qtd_atual
+        letra_que_apareceu_mais_vezes = letra_atual
     i += 1
+
+print(f'A letra que apareceu mais vezes foi "{letra_que_apareceu_mais_vezes}"')
+
+"""
+Iterável -> str, range, etc (__iter__)
+Iterador -> quem sabe entregar um valor por vez
+next -> me entregue o próximo valor (__next__)
+iter -> me entregue seu iterador
+"""
+
+texto = "Osmar william".__iter__()
+print(texto)
+texto = iter("Osmar william")
+print(texto)
+print(texto.__next__())
+print(texto.__next__())
+print(texto.__next__())
+
+
+texto = "Osmar" # iterável
+iterador = iter(texto) # iterador
+while True:
+    try:
+        print(next(iterador))
+    except StopIteration:
+        break
+
