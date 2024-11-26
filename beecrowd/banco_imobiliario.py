@@ -1,15 +1,5 @@
 dinheiro, rodadas = map(int, input().split())
 d, e, f = [dinheiro] * 3
-
-def compra(pessoa : str, valor : int) -> None:
-    if pessoa == "d":
-        d -= valor
-    if pessoa == "e":
-        e -= valor
-    else: 
-        f -= valor
-    
-
 for _ in range(rodadas):
     items = input().split()
     if items[0] == 'C':
@@ -24,13 +14,26 @@ for _ in range(rodadas):
             d += int(items[2])
         elif items[1] == "E":
             e += int(items[2])
-        else: 
+        else:
             f += int(items[2])
-    else: 
+    else:
         if items[1] == "D":
             d += int(items[3])
+            if items[2] == "F":
+                f -= int(items[3])
+            elif items[2] == "E":   
+                e -= int(items[3])
         elif items[1] == "E":
             e += int(items[3])
-        else: 
+            if items[2] == "F":
+                f -= int(items[3])
+            elif items[2] == "D":   
+                d -= int(items[3])
+        elif items[1] == "F": 
             f += int(items[3])
+            if items[2] == "D":
+                d -= int(items[3])
+            elif items[2] == "E":   
+                e -= int(items[3])
+        
 print(f'{d} {e} {f}')
