@@ -17,10 +17,16 @@ usuário.
 
 senha_secreta = "perfume"
 senha_teste =  "*" *  len(senha_secreta)
-letra = input()
-for i in range(len(senha_secreta)):
-    if letra == senha_secreta[i]:
-        senha_teste = list(senha_teste)
-        senha_teste[i] = letra
-        senha_teste = "".join(senha_teste)
-print(senha_teste)
+tentativas = 0
+while senha_secreta != senha_teste:
+    print("Digite uma letra: ", end="")
+    letra = input()
+    for i in range(len(senha_secreta)):
+        if letra == senha_secreta[i]:
+            senha_teste = list(senha_teste)
+            senha_teste[i] = letra
+            senha_teste = "".join(senha_teste)
+    tentativas += 1
+    print(senha_teste)
+
+print(f'Parabéns, voce levou {tentativas} para adivinhar a senha: {senha_teste}')

@@ -620,6 +620,8 @@ print(texto)
 print(texto.__next__())
 print(texto.__next__())
 print(texto.__next__())
+print(texto.__next__())
+print(texto.__next__())
 
 
 texto = "Osmar" # iterável
@@ -630,3 +632,102 @@ while True:
     except StopIteration:
         break
 
+matriz_a1 = [[1,2,3], 
+             [4,5,6], 
+             [7,8,9]]
+
+matriz_a2 = [[0] * len(matriz_a1[0]) for _ in range(len(matriz_a1))]
+print(matriz_a2)
+for indice_linha, linha in enumerate(matriz_a1):
+    for coluna in range(len(linha)):
+        matriz_a2[indice_linha][coluna] = matriz_a1[coluna][indice_linha]
+    print(matriz_a2)
+
+
+lista = [10,200,300,400]
+del lista[2]
+
+# crud
+# Creat Read Update delete
+
+lista.append(12)
+lista.append(115)
+nome = lista.pop()
+print(nome)
+del lista[-1]
+
+lista.insert(0, "luiz")
+lista.insert(0, 5)
+
+lista.insert(10000, 15) # mesmo que a lista nao tenha esse tamanho o valor passado será adicionando no fim 
+
+""" 
+Métodos úteis:
+    append - adiciona um valor ao fim da lista
+    insert - insere um valor em uma posição selecionada
+    pop - remove o final da lista ou um indice passado
+    del - apaga um indice
+    clear - limpa a lista
+    extend - estende a lista
+    + - concatenar 
+"""
+lista.clear()
+print(lista)
+
+"""
+Cuidados com dados mutáveis
+    = - copiado o valor (imutáveis)
+    = - aponta para o mesmo valor na memória (mutável)
+
+"""
+
+nome = "Luiz" # imutaveis
+nome = "Osmar" 
+print(nome[0])
+lista1 = [1,2,3,4]
+
+lista1 = [5,6,7,] # mutaveis
+print(lista)
+
+lista2 = lista1.copy() # agora foi criada uma lista2 que não aponta para a lista1, por conta do metodo copy()
+
+
+"""
+INTRODUÇÃO AO DESEMPACOTAMENTO + TUPLES (TUPLAS)
+"""
+
+nomes = ['maria', 'helena', 'luiz']
+
+
+nome1, *resto = nomes
+print(nome1, resto)
+
+_,_, nome1, *resto = nomes
+print(nome1, resto)
+
+"""
+    Tipo tupla - uma lista imutável, assim como string, tupla sao imutaveis
+"""
+
+nomes1 = "maria", "osmar", "luiz" # tuplas são usadas caso eu nao precise alterar o valor 
+
+nomes = tuple(nomes)
+nomes = list(nomes)
+
+# ENUMERATES
+
+lista = ["maria", "helena", "luiz"]
+lista.append("joao")
+
+lista_enumerada = enumerate(lista)
+
+print(next(lista_enumerada))
+
+for item in lista_enumerada:
+    print(item)
+
+lista_enumerada = list(enumerate(lista, start=0))
+print(lista_enumerada)
+
+for indice, valor in lista_enumerada:
+    print(indice, valor)
